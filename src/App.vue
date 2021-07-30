@@ -14,7 +14,7 @@
 
 <style>
   :root {
-    --font: 'Lato', sans-serif;
+    --primaryFont: 'Lato', sans-serif;
     --backgroundColour: #FFFEFE;
   }
 

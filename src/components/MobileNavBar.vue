@@ -1,7 +1,10 @@
 <template>
-    <div id="navBar">
-        <img src="../assets/logo.png" alt="" v-if="isHomePage === false">
-        <div id="spacer"></div>
+    <div id="navBar" :class="{ hideLogo: isHomePage }">
+        <div id="spacer" v-if="isHomePage === true"></div>
+        <router-link to="/" v-if="isHomePage === false" id="logo">
+            <img src="../assets/logo.png" alt="">
+        </router-link>
+        <v-spacer></v-spacer>
         <v-icon large color="black" v-if="toggleNavMenu === false" @click="toggleNavMenu = !toggleNavMenu">mdi-menu</v-icon>
         <v-icon large color="black" v-if="toggleNavMenu === true" @click="toggleNavMenu = !toggleNavMenu">mdi-close</v-icon>
         <nav id="navMenu" :class="{ showNavMenu: toggleNavMenu }">
@@ -30,15 +33,23 @@
 </script>
 
 <style scoped>
-    #navBar {
+    #navBar, .hideLogo {
         position: fixed;
         top: 0%;
         width: 100%;
         height: 8vh;
-        z-index: 1;
 
         display: grid;
         place-items: center;
+        grid-auto-flow: column;
+        background: white;
+    }
+
+    #navBar {
+        grid-template-columns: 1fr 3fr 1fr;
+    }
+
+    .hideLogo {
         grid-template-columns: 5fr 1fr;
     }
 
@@ -55,19 +66,22 @@
         top: -50vh;
         display: grid;
         place-items: center;
-        padding: 5% 0%;
     }
 
     .showNavMenu {
         background: white;
         top: 100%;
+        padding: 5% 0%;
     }
 
     a {
         text-decoration: none;
-        font-family: var(--font);
+        font-family: var(--primaryFont);
         letter-spacing: 1px;
         padding: 20px 0px;
+        width: 100%;
+        height: 100%;
+        text-align: center;
     }
 
     .v-application a {
@@ -80,11 +94,13 @@
         width: 100%;
     }
 
-    .v-icon {
-        z-index: 5;
+    #logo {
+        padding: 0px;
+        margin-top: 10px;
     }
 
     img {
-        width: 10%;
+        width: 100%;
+        margin-left: 15%;
     }
 </style>
