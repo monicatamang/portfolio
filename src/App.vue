@@ -13,10 +13,12 @@
 </script>
 
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Lora:wght@400;700&display=swap');
+  :root {
+    --font: 'Lato', sans-serif;
+    --backgroundColour: #FFFEFE;
+  }
 
-  :root{
-    --titleFont: 'Lato', sans-serif;
-    --bodyFont: 'Lora', serif;
+  .v-main {
+    background: var(--backgroundColour);
   }
 </style>

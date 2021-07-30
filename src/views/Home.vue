@@ -1,31 +1,38 @@
 <template>
     <section>
-        <nav-bar></nav-bar>
+        <mobile-nav-bar :isHomePage="true"></mobile-nav-bar>
         <main>
+            <img src="../assets/logo.png" alt="">
             <article>
                 <h1>Monica Tamang</h1>
-                <p>Optimizing business growth through design, innovation and creativity</p>
+                <h3>Junior Full-Stack Developer</h3>
             </article>
             <div>
-                <router-link to="/Contact" class="text-decoration-none">
-                    <v-btn large depressed color="black" class="white--text">Contact</v-btn>
-                </router-link>
-                <router-link to="/Projects" class="text-decoration-none">
-                    <v-btn large depressed outlined>Projects</v-btn>
-                </router-link>
+                <v-btn large dark depressed @click="goToContactPage">Contact</v-btn>
+                <v-btn large outlined depressed @click="goToProjectsPage">Projects</v-btn>
             </div>
         </main>
     </section>
 </template>
 
 <script>
-    import NavBar from "../components/NavBar.vue";
+    import MobileNavBar from "../components/MobileNavBar.vue";
 
     export default {
         name: "Home",
 
         components: {
-            NavBar
+            MobileNavBar
+        },
+
+        methods: {
+            goToContactPage() {
+                this.$router.push('/Contact');
+            },
+
+            goToProjectsPage() {
+                this.$router.push('/Projects');
+            }
         }
     }
 </script>
@@ -34,8 +41,9 @@
     main {
         display: grid;
         place-items: center;
-        min-height: 80vh;
+        min-height: 65vh;
         text-align: center;
+        margin-top: 10vh;
     }
 
     article {
@@ -47,25 +55,32 @@
     div {
         display: grid;
         place-items: center;
-        row-gap: 30px;
+        row-gap: 20px;
     }
 
     .v-btn {
-        font-family: var(--titleFont);
+        font-family: var(--font);
         letter-spacing: 2px;
+        width: 35vw;
     }
 
     h1 {
-        font-family: var(--titleFont);
+        font-family: var(--font);
+        font-weight: 400;
         text-transform: uppercase;
-        font-weight: bold;
         letter-spacing: 4px;
         font-size: 1.6rem;
     }
 
-    p {
-        font-family: var(--bodyFont);
-        padding: 0% 10%;
-        line-height: 30px;
+    h3 {
+        font-family: var(--font);
+        font-weight: 400;
+        letter-spacing: 1px;
+        font-size: 1rem;
+        margin-top: -5%;
+    }
+
+    img {
+        width: 50%;
     }
 </style>
