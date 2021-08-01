@@ -1,6 +1,6 @@
 <template>
     <section>
-        <mobile-nav-bar></mobile-nav-bar>
+        <mobile-nav-bar :isHomePage="false"></mobile-nav-bar>
         <h1 id="heading">Projects</h1>
         <article v-for="project in projects" :key="project.id">
             <div class="projectContainer">
@@ -84,7 +84,7 @@
                         website: "https://post-it.tk",
                         frontendCode: "https://github.com/monicatamang/vueRockPaperScissors.git",
                         backendCode:  "",
-                        color: "black"
+                        color: "#313131"
                     },
                     {
                         id: 4,
