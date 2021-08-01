@@ -9,22 +9,21 @@
                     <h1 class="projectTitle">{{ project.title }}</h1>
                     <p class="projectDuration">{{ project.duration }}</p>
                     <p>{{ project.description }}</p>
-                    <div class="skillsContainer">
-                        <span></span>
-                        <p class="projectSkills">{{ project.skills }}</p>
-                    </div>
+                    <p class="projectSkills">{{ project.skills }}</p>
                     <div class="buttonContainer">
                         <a target="_blank" :href="project.website" class="websiteLink">
                             <button class="websiteButton">Website</button>
                         </a>
-                        <div class="githubLinks">
-                            <a target="_blank" :href="project.frontendCode" class="frontendCodeLink" v-if="project.backendCode !== '' && project.backendCode !== null">
+                        <div class="githubLinksFrontendAndBackend" v-if="project.backendCode !== '' && project.backendCode !== null">
+                            <a target="_blank" :href="project.frontendCode" class="frontendCodeLink">
                                 <button class="frontendCodeButton">Front-end Code</button>
                             </a>
-                            <a target="_blank" :href="project.backendCode" class="backendCodeLink" v-if="project.backendCode !== '' && project.backendCode !== null">
+                            <a target="_blank" :href="project.backendCode" class="backendCodeLink">
                                 <button class="backendCodeButton">Back-end Code</button>
                             </a>
-                            <a target="_blank" :href="project.frontendCode" class="frontendCodeLink" v-else-if="project.backendCode === '' || project.backendCode === null">
+                        </div>
+                        <div class="githubLinksFrontendOnly" v-else-if="project.backendCode === '' || project.backendCode === null">
+                            <a target="_blank" :href="project.frontendCode" class="frontendCodeLink">
                                 <button class="frontendCodeButton">Front-end Code</button>
                             </a>
                         </div>
@@ -87,7 +86,40 @@
                         backendCode:  "",
                         color: "black"
                     },
+                    {
+                        id: 4,
+                        title: "Okotoks Pizza",
+                        duration: "March 2, 2021 - March 15, 2021",
+                        description: "Website design for a pizza restaurant to increase the number of phone call orders for pick-up and online reservations.",
+                        skills: "HTML, SCSS",
+                        image: "/img/okotoksPizzaIphoneMockup.fcc7716e.jpg",
+                        alt: "",
+                        website: "https://okotokspizzarestaurant.ml",
+                        frontendCode: "https://github.com/monicatamang/OkotoksPizzaProject.git",
+                        backendCode:  "",
+                        color: "#393F46"
+                    },
                 ]
+            }
+        },
+
+        mounted() {
+            let websiteLinks = document.getElementsByClassName('websiteLink');
+            let frontendCodeLinks = document.getElementsByClassName('frontendCodeLink');
+            let backendCodeLinks = document.getElementsByClassName('backendCodeLink');
+
+            for(let i = 0; i < websiteLinks.length; i++) {
+                websiteLinks[i].style.background = this.projects[i].color;
+            }
+
+            for(let i = 0; i < frontendCodeLinks.length; i++) {
+                frontendCodeLinks[i].style.border = `1px solid ${this.projects[i].color}`;
+                frontendCodeLinks[i].style.color = this.projects[i].color;
+            }
+
+            for(let i = 0; i < backendCodeLinks.length; i++) {
+                backendCodeLinks[i].style.border = `1px solid ${this.projects[i].color}`;
+                backendCodeLinks[i].style.color = this.projects[i].color;
             }
         }
     }
@@ -146,7 +178,7 @@
         margin: 6% 0% 8% 0%;
     }
 
-    .githubLinks {
+    .githubLinksFrontendAndBackend {
         display: grid;
         place-items: center;
         grid-template-columns: 1fr 1fr;
@@ -154,8 +186,16 @@
         width: 100%;
     }
 
+    .githubLinksFrontendOnly {
+        display: grid;
+        place-items: center;
+        width: 100%;
+    }
+
     .websiteLink, .frontendCodeLink, .backendCodeLink {
         font-family: var(--primaryFont);
+        border-radius: 2px;
+        font-weight: 300;
     }
 
     .websiteLink {
@@ -168,19 +208,12 @@
     .frontendCodeLink, .backendCodeLink {
         width: 100%;
         text-align: center;
-        padding: 3% 0%;
+        padding: 2% 0%;
     }
 
     .websiteButton, .frontendCodeButton, .backendCodeButton {
         letter-spacing: 1px;
         font-size: 1rem;
-    }
-
-    span {
-        background: #52688F;
-        width: 15px;
-        height: 1.5px;
-        align-self: center;
     }
 
     .projectSkills {
