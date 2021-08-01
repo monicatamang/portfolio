@@ -1,8 +1,6 @@
 <template>
-    <section>
-        <mobile-nav-bar></mobile-nav-bar>
-        <h1 id="heading">Projects</h1>
-        <article v-for="project in projects" :key="project.id">
+    <article>
+        <div v-for="project in projects" :key="project.id" class="mainContainer">
             <div class="projectContainer">
                 <img :src="project.image" :alt="project.alt">
                 <div class="textContainer">
@@ -31,82 +29,39 @@
                     </div>
                 </div>
             </div>
-        </article>
-    </section>
+        </div>
+    </article>
 </template>
 
 <script>
-    import MobileNavBar from "../components/MobileNavBar.vue";
-
     export default {
-        name: "Projects",
+        name: "single-project",
 
-        components: {
-            MobileNavBar
+        props: {
+            project: Object
         },
 
-        data() {
-            return {
-                projects: [
-                    {
-                        id: 1,
-                        title: "Job Check",
-                        duration: "July 10, 2021 - July 21, 2021",
-                        description: "An application used to help job seekers track and organize job applications, interviews, networking events and other relevant career opportunities.",
-                        skills: "Vue.js, MariaDB, SQL, Flask",
-                        image: "img/jobCheckIphoneMockup.7343d89f.png",
-                        alt: "",
-                        website: "https://jobcheck.ml",
-                        frontendCode: "https://github.com/monicatamang/jobCheckFrontend.git",
-                        backendCode: "https://github.com/monicatamang/jobCheckBackend.git",
-                        color: "#52688F"
-                    },
-                    {
-                        id: 2,
-                        title: "Post-It",
-                        duration: "April 2021 - July 2021",
-                        description: "A Twitter clone application used for college and university students to increase community engagement on campus.",
-                        skills: "Vue.js, MariaDB, SQL, Flask",
-                        image: "/img/postItIphoneMockup.6549f2b0.jpg",
-                        alt: "",
-                        website: "https://post-it.tk",
-                        frontendCode: "https://github.com/monicatamang/postItFrontend.git",
-                        backendCode: "https://github.com/monicatamang/postItBackend.git",
-                        color: "#60A3D9"
-                    },
-                    {
-                        id: 3,
-                        title: "Rock Paper Scissors",
-                        duration: "April 2021 - May 2021",
-                        description: "Website design for the classic game of 'Rock Paper Scissors'.",
-                        skills: "Vue.js",
-                        image: "/img/rockPaperScissorsIphoneMockup.fa399af0.jpg",
-                        alt: "",
-                        website: "https://post-it.tk",
-                        frontendCode: "https://github.com/monicatamang/vueRockPaperScissors.git",
-                        backendCode:  "",
-                        color: "black"
-                    },
-                ]
+        mounted() {
+            let websiteLinks = document.getElementsByClassName('websiteLink');
+            let frontendCodeLinks = document.getElementsByClassName('frontendCodeLink');
+            let backendCodeLinks = document.getElementsByClassName('backendCodeLink');
+            let dashlines = document.querySelectorAll('span');
+            for(let i = 0; i < this.projects.length; i++) {
+                websiteLinks[i].style.background = `#60A3D9`;
+                frontendCodeLinks[i].style.border = `1px solid ${this.projects[i].color}`;
+                frontendCodeLinks[i].style.color = `${this.projects[i].color}`;
+                backendCodeLinks[i].style.color = `${this.projects[i].color}`;
+                backendCodeLinks[i].style.border = `1px solid ${this.projects[i].color}`;
+                dashlines[j].style.background = `${this.projects[j].color}`;
             }
         }
     }
 </script>
 
 <style scoped>
-    article, div {
+    .mainContainer, div {
         display: grid;
         place-items: center;
-    }
-
-    #heading {
-        margin: 11vh 0vw 3vh 0vw;
-        font-family: var(--primaryFont);
-        text-transform: uppercase;
-        text-align: center;
-        font-weight: 400;
-        letter-spacing: 4px;
-        font-size: 1.8rem;
     }
 
     .projectContainer {

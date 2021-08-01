@@ -38,6 +38,7 @@
         top: 0%;
         width: 100%;
         height: 8vh;
+        z-index: 10;
 
         display: grid;
         place-items: center;
