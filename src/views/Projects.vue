@@ -80,7 +80,7 @@
                         id: 3,
                         title: "Rock Paper Scissors",
                         duration: "April 2021 - May 2021",
-                        description: "Website design for the classic game of 'Rock Paper Scissors'.",
+                        description: 'Website design for the classic game of "Rock Paper Scissors".',
                         skills: "Vue.js",
                         image: "/img/rockPaperScissorsIphoneMockup.fa399af0.jpg",
                         alt: "",

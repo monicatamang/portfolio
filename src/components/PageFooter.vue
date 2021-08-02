@@ -2,6 +2,7 @@
     <article>
         <div id="linksContainer">
             <a href="mailto:tamang.monica@gmail.com"><v-icon color="white">mdi-email</v-icon></a>
+            <a href="tel:4034776231"><v-icon color="white">mdi-phone</v-icon></a>
             <a href="https://github.com/monicatamang/"><v-icon color="white">mdi-github</v-icon></a>
             <a href="https://www.linkedin.com/in/monicatamang/"><v-icon color="white">mdi-linkedin</v-icon></a>
         </div>
@@ -29,7 +30,7 @@
     #linksContainer {
         display: grid;
         place-items: center;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(4, 1fr);
         width: 100%;
     }
 
