@@ -50,10 +50,6 @@
         font-size: 1.8rem;
     }
 
-    h2 {
-        font-weight: 700;
-    }
-
     h3 {
         font-family: var(--primaryFont);
         font-weight: 400;
@@ -99,5 +95,45 @@
         border: 1px solid black;
         justify-self: start;
         padding: 3%;
+    }
+
+    @media only screen and (min-width: 768px) {
+
+        article {
+            row-gap: 45px;
+        }
+
+        h1 {
+            font-size: 2.3rem;
+            margin: 10vh 0vw 4vh 0vw;
+        }
+
+        h3 {
+            font-size: 1.6rem;
+        }
+
+        #quoteRequestContainer {
+            padding: 3% 5%;
+        }
+
+        #quoteRequestContainer button {
+            display: grid;
+            place-items: center;
+            grid-template-columns: 1fr 3fr;
+            font-size: 1.6rem;
+        }
+
+        .v-icon {
+            margin-right: 10px;
+            font-size: 2rem;
+        }
+
+        a {
+            font-size: 1.4rem;
+        }
+
+        #resumeButton {
+            padding: 2%;
+        }
     }
 </style>
