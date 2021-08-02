@@ -2,25 +2,26 @@
     <section>
         <mobile-nav-bar :isHomePage="false"></mobile-nav-bar>
         <h1>Skills</h1>
-        <article>
-            <div v-for="skill in skills" :key="skill.id" class="mainContainer">
-                <div class="skillContainer">
-                    <img :src="skill.icon" :alt="skill.alt">
-                    <p>{{ skill.language }}</p>
-                </div>
+        <article class="mainContainer">
+            <div v-for="skill in skills" :key="skill.id" class="skillContainer">
+                <img :src="skill.icon" :alt="skill.alt">
+                <p>{{ skill.language }}</p>
             </div>
         </article>
+        <page-footer></page-footer>
     </section>
 </template>
 
 <script>
     import MobileNavBar from "../components/MobileNavBar.vue";
+    import PageFooter from "../components/PageFooter.vue";
 
     export default {
         name: "Skills",
 
         components: {
-            MobileNavBar
+            MobileNavBar,
+            PageFooter
         },
 
         data() {
@@ -127,13 +128,13 @@
         font-size: 1.8rem;
     }
 
-    article, div {
+    .mainContainer, div {
         display: grid;
         place-items: center;
         height: 100%;
     }
 
-    article {
+    .mainContainer {
         grid-template-columns: repeat(auto-fit, minmax(50%, 1fr));
         padding: 0% 5%;
         row-gap: 15px;

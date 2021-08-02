@@ -2,7 +2,7 @@
     <section>
         <mobile-nav-bar :isHomePage="false"></mobile-nav-bar>
         <h1 id="heading">Projects</h1>
-        <article v-for="project in projects" :key="project.id">
+        <article v-for="project in projects" :key="project.id" class="mainContainer">
             <div class="projectContainer">
                 <img :src="project.image" :alt="project.alt">
                 <div class="textContainer">
@@ -31,17 +31,20 @@
                 </div>
             </div>
         </article>
+        <page-footer></page-footer>
     </section>
 </template>
 
 <script>
     import MobileNavBar from "../components/MobileNavBar.vue";
+    import PageFooter from "../components/PageFooter.vue";
 
     export default {
         name: "Projects",
 
         components: {
-            MobileNavBar
+            MobileNavBar,
+            PageFooter
         },
 
         data() {
@@ -53,7 +56,7 @@
                         duration: "July 10, 2021 - July 21, 2021",
                         description: "An application used to help job seekers track and organize job applications, interviews, networking events and other relevant career opportunities.",
                         skills: "Vue.js, MariaDB, SQL, Flask",
-                        image: "img/jobCheckIphoneMockup.7343d89f.png",
+                        image: "/img/jobCheckIphoneMockup.7343d89f.png",
                         alt: "",
                         website: "https://jobcheck.ml",
                         frontendCode: "https://github.com/monicatamang/jobCheckFrontend.git",
@@ -126,7 +129,7 @@
 </script>
 
 <style scoped>
-    article, div {
+    .mainContainer, div {
         display: grid;
         place-items: center;
     }

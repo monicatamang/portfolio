@@ -5,7 +5,7 @@
             <img src="../assets/logo.png" alt="">
             <article>
                 <h1>Monica Tamang</h1>
-                <h2>Junior Full-Stack Developer</h2>
+                <h2>Junior Full-Stack Web Developer</h2>
             </article>
             <div>
                 <v-btn large dark depressed @click="goToContactPage">Contact</v-btn>
