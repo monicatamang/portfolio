@@ -2,7 +2,7 @@
     <div id="navBar" :class="{ hideLogo: isHomePage }">
         <div id="spacer" v-if="isHomePage === true"></div>
         <router-link to="/" v-if="isHomePage === false" id="logo">
-            <img src="../assets/logo.png" alt="">
+            <img src="../assets/logo.png" alt="Monica Tamang's official logo with the initials 'MT' in the middle with the word 'DESIGNS' spaced out at beneatht initials enclosed in a square.">
         </router-link>
         <v-spacer></v-spacer>
         <v-icon large color="black" v-if="toggleNavMenu === false" @click="toggleNavMenu = !toggleNavMenu">mdi-menu</v-icon>

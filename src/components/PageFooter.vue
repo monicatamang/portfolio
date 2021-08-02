@@ -61,4 +61,26 @@
     #copyrightIcon {
         font-size: 1rem;
     }
+
+    @media only screen and (min-width: 768px) {
+
+        article {
+            row-gap: 50px;
+            padding: 6%;
+            position: relative;
+            bottom: -6vh;
+        }
+
+        .v-icon {
+            font-size: 2.5rem;
+        }
+
+        p {
+            font-size: 1.1rem;
+        }
+
+        #copyrightIcon {
+            font-size: 1.3rem;
+        }
+    }
 </style>

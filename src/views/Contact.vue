@@ -25,7 +25,7 @@
         name: "Contact",
 
         components: {
-            MobileNavBar,
+            MobileNavBar
         }
     }
 </script>

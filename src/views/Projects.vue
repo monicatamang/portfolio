@@ -4,7 +4,10 @@
         <h1 id="heading">Projects</h1>
         <article v-for="project in projects" :key="project.id" class="mainContainer">
             <div class="projectContainer">
-                <img :src="project.image" :alt="project.alt">
+                <img src="../assets/jobCheckIphoneMockup.png" :alt="project.alt" v-if="project.title === 'Job Check'">
+                <img src="../assets/postItIphoneMockup.jpg" :alt="project.alt" v-if="project.title === 'Post-It'">
+                <img src="../assets/rockPaperScissorsIphoneMockup.jpg" :alt="project.alt" v-if="project.title === 'Rock Paper Scissors'">
+                <img src="../assets/okotoksPizzaIphoneMockup.jpg" :alt="project.alt" v-if="project.title === 'Okotoks Pizza'">
                 <div class="textContainer">
                     <h1 class="projectTitle">{{ project.title }}</h1>
                     <p class="projectDuration">{{ project.duration }}</p>
@@ -34,11 +37,10 @@
         <page-footer></page-footer>
     </section>
 </template>
-
 <script>
     import MobileNavBar from "../components/MobileNavBar.vue";
     import PageFooter from "../components/PageFooter.vue";
-
+    
     export default {
         name: "Projects",
 
@@ -56,8 +58,7 @@
                         duration: "July 10, 2021 - July 21, 2021",
                         description: "An application used to help job seekers track and organize job applications, interviews, networking events and other relevant career opportunities.",
                         skills: "Vue.js, MariaDB, SQL, Flask",
-                        image: "/img/jobCheckIphoneMockup.7343d89f.png",
-                        alt: "",
+                        alt: "An iPhone mockup of a job tracker and organizer application called Job Check that that uses a blue-purple themed colour palette.",
                         website: "https://jobcheck.ml",
                         frontendCode: "https://github.com/monicatamang/jobCheckFrontend.git",
                         backendCode: "https://github.com/monicatamang/jobCheckBackend.git",
@@ -69,8 +70,7 @@
                         duration: "April 2021 - July 2021",
                         description: "A Twitter clone application used for college and university students to increase community engagement on campus.",
                         skills: "Vue.js, MariaDB, SQL, Flask",
-                        image: "/img/postItIphoneMockup.6549f2b0.jpg",
-                        alt: "",
+                        alt: "An iPhone mockup of a Twitter clone application called Post-It that uses a light blue colour themed colour palette.",
                         website: "https://post-it.tk",
                         frontendCode: "https://github.com/monicatamang/postItFrontend.git",
                         backendCode: "https://github.com/monicatamang/postItBackend.git",
@@ -82,8 +82,7 @@
                         duration: "April 2021 - May 2021",
                         description: 'Website design for the classic game of "Rock Paper Scissors".',
                         skills: "Vue.js",
-                        image: "/img/rockPaperScissorsIphoneMockup.fa399af0.jpg",
-                        alt: "",
+                        alt: "An iPhone mockup of the game Rock Paper Scissors that uses a netural themed colour palette.",
                         website: "https://post-it.tk",
                         frontendCode: "https://github.com/monicatamang/vueRockPaperScissors.git",
                         backendCode:  "",
@@ -95,8 +94,7 @@
                         duration: "March 2, 2021 - March 15, 2021",
                         description: "Website design for a pizza restaurant to increase the number of phone call orders for pick-up and online reservations.",
                         skills: "HTML, SCSS",
-                        image: "/img/okotoksPizzaIphoneMockup.fcc7716e.jpg",
-                        alt: "",
+                        alt: "An iPhone mockup of pizza restaurant website called Okotoks Pizza that uses a neutral themed colour palette.",
                         website: "https://okotokspizzarestaurant.ml",
                         frontendCode: "https://github.com/monicatamang/OkotoksPizzaProject.git",
                         backendCode:  "",
@@ -110,16 +108,16 @@
             let websiteLinks = document.getElementsByClassName('websiteLink');
             let frontendCodeLinks = document.getElementsByClassName('frontendCodeLink');
             let backendCodeLinks = document.getElementsByClassName('backendCodeLink');
-
+            
             for(let i = 0; i < websiteLinks.length; i++) {
                 websiteLinks[i].style.background = this.projects[i].color;
             }
-
+            
             for(let i = 0; i < frontendCodeLinks.length; i++) {
                 frontendCodeLinks[i].style.border = `1px solid ${this.projects[i].color}`;
                 frontendCodeLinks[i].style.color = this.projects[i].color;
             }
-
+            
             for(let i = 0; i < backendCodeLinks.length; i++) {
                 backendCodeLinks[i].style.border = `1px solid ${this.projects[i].color}`;
                 backendCodeLinks[i].style.color = this.projects[i].color;
@@ -150,7 +148,7 @@
         width: 90%;
         margin-bottom: 20px;
     }
-
+    
     img {
         width: 80%;
     }
@@ -173,6 +171,7 @@
 
     .textContainer {
         padding: 0% 5%;
+        width: 100%;
     }
 
     .buttonContainer {
@@ -228,5 +227,29 @@
         grid-template-columns: 1fr 10fr;
         column-gap: 10px;
         justify-self: start;
+    }
+
+    @media only screen and (min-width: 768px) {
+        
+        #heading {
+            font-size: 2.3rem;
+            margin: 10vh 0vw 4vh 0vw;
+        }
+
+        .projectTitle {
+            font-size: 1.8rem;
+        }
+
+        p {
+            font-size: 1.3rem;
+        }
+
+        img {
+            width: 70%;
+        }
+
+        .websiteButton, .frontendCodeButton, .backendCodeButton {
+            font-size: 1.25rem;
+        }
     }
 </style>

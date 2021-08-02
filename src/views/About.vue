@@ -53,4 +53,19 @@
         font-family: var(--primaryFont);
         font-weight: 300;
     }
+
+    @media only screen and (min-width: 768px) {
+
+        h1 {
+            font-size: 2.3rem;
+        }
+
+        p {
+            font-size: 1.25rem;
+        }
+
+        #aboutSection {
+            margin: 10vh 0vw 1vh 0vw;
+        }
+    }
 </style>
