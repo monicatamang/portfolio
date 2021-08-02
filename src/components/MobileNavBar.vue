@@ -104,4 +104,19 @@
         width: 100%;
         margin-left: 15%;
     }
+
+    @media only screen and (min-width: 768px) {
+
+        .mdi:before, .mdi-set {
+            font-size: 3rem;
+        }
+
+        #navBar {
+            grid-template-columns: 1fr 5fr 1fr;
+        }
+
+        .v-application a {
+            font-size: 1.4rem;
+        }
+    }
 </style>

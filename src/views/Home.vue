@@ -49,7 +49,7 @@
     article {
         display: grid;
         place-items: center;
-        row-gap: 30px;
+        row-gap: 25px;
     }
 
     div {
@@ -82,5 +82,37 @@
 
     img {
         width: 50%;
+    }
+
+    @media only screen and (min-width: 768px) {
+
+        main {
+            row-gap: 10vh;
+        }
+
+        article {
+            row-gap: 35px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+        }
+
+        h2 {
+            font-size: 1.6rem;
+        }
+
+        .v-btn.v-size--large {
+            font-size: 1.4rem;
+        }
+
+        .v-btn:not(.v-btn--round).v-size--large {
+            width: 25vw;
+            height: 6vh;
+        }
+
+        img {
+            width: 30%;
+        }
     }
 </style>
