@@ -133,7 +133,7 @@
         }
 
         #resumeButton {
-            padding: 2%;
+            padding: 2% 3%;
         }
     }
 </style>

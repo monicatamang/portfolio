@@ -4,10 +4,10 @@
         <h1 id="heading">Projects</h1>
         <article v-for="project in projects" :key="project.id" class="mainContainer">
             <div class="projectContainer">
-                <img src="../assets/jobCheckIphoneMockup.png" :alt="project.alt" v-if="project.title === 'Job Check'">
-                <img src="../assets/postItIphoneMockup.jpg" :alt="project.alt" v-if="project.title === 'Post-It'">
-                <img src="../assets/rockPaperScissorsIphoneMockup.jpg" :alt="project.alt" v-if="project.title === 'Rock Paper Scissors'">
-                <img src="../assets/okotoksPizzaIphoneMockup.jpg" :alt="project.alt" v-if="project.title === 'Okotoks Pizza'">
+                <img src="../assets/mockups/jobCheckIphoneMockup.png" :alt="project.alt" v-if="project.title === 'Job Check'">
+                <img src="../assets/mockups/postItIphoneMockup.jpg" :alt="project.alt" v-if="project.title === 'Post-It'">
+                <img src="../assets/mockups/rockPaperScissorsIphoneMockup.jpg" :alt="project.alt" v-if="project.title === 'Rock Paper Scissors'">
+                <img src="../assets/mockups/okotoksPizzaIphoneMockup.jpg" :alt="project.alt" v-if="project.title === 'Okotoks Pizza'">
                 <div class="textContainer">
                     <h1 class="projectTitle">{{ project.title }}</h1>
                     <p class="projectDuration">{{ project.duration }}</p>

@@ -1,5 +1,6 @@
 <template>
   <v-app>
+    <desktop-nav-bar></desktop-nav-bar>
     <v-main>
       <router-view/>
     </v-main>
@@ -7,8 +8,14 @@
 </template>
 
 <script>
+  import DesktopNavBar from "../src/components/DesktopNavBar.vue";
+
   export default {
-    name: 'App'
+    name: 'App',
+
+    components: {
+      DesktopNavBar
+    }
 };
 </script>
 

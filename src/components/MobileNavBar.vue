@@ -119,4 +119,11 @@
             font-size: 1.4rem;
         }
     }
+
+    @media only screen and (min-width: 1024px) {
+
+        #navBar {
+            display: none;
+        }
+    }
 </style>

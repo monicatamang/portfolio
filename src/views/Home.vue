@@ -115,4 +115,32 @@
             width: 30%;
         }
     }
+
+    @media only screen and (min-width: 1024px) {
+
+        article {
+            row-gap: 40px;
+        }
+
+        img {
+            display: none;
+        }
+
+        h1 {
+            letter-spacing: 10px;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+        }
+
+        .v-btn.v-size--large {
+            font-size: 1rem;
+        }
+
+        .v-btn:not(.v-btn--round).v-size--large {
+            width: 12vw;
+            height: 8vh;
+        }
+    }
 </style>
