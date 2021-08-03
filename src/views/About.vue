@@ -68,4 +68,21 @@
             margin: 10vh 0vw 1vh 0vw;
         }
     }
+
+    @media only screen and (min-width: 1024px) {
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 5vh;
+        }
+
+        p {
+            font-size: 1.1rem;
+        }
+
+        #aboutSection {
+            margin: 3vh 0vw 5vh 0vw;
+            line-height: 5vh;
+        }
+    }
 </style>

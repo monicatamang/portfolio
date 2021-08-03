@@ -14,19 +14,19 @@
                     <p>{{ project.description }}</p>
                     <p class="projectSkills">{{ project.skills }}</p>
                     <div class="buttonContainer">
-                        <a target="_blank" :href="project.website" class="websiteLink">
+                        <a target="_blank" :href="project.website" class="websiteLink" :id="`websiteLink${project.id}`" @mouseenter="mouseEnterWebsiteLink(project.id)" @mouseleave="mouseLeaveWebsiteLink(project.id)">
                             <button class="websiteButton">Website</button>
                         </a>
                         <div class="githubLinksFrontendAndBackend" v-if="project.backendCode !== '' && project.backendCode !== null">
-                            <a target="_blank" :href="project.frontendCode" class="frontendCodeLink">
+                            <a target="_blank" :href="project.frontendCode" class="frontendCodeLink" :id="`frontendCodeLink${project.id}`" @mouseenter="mouseEnterFrontendLink(project.id)" @mouseleave="mouseLeaveFrontendLink(project.id)">
                                 <button class="frontendCodeButton">Front-end Code</button>
                             </a>
-                            <a target="_blank" :href="project.backendCode" class="backendCodeLink">
+                            <a target="_blank" :href="project.backendCode" class="backendCodeLink" :id="`backendCodeLink${project.id}`" @mouseenter="mouseEnterBackendLink(project.id)" @mouseleave="mouseLeaveBackendLink(project.id)">
                                 <button class="backendCodeButton">Back-end Code</button>
                             </a>
                         </div>
                         <div class="githubLinksFrontendOnly" v-else-if="project.backendCode === '' || project.backendCode === null">
-                            <a target="_blank" :href="project.frontendCode" class="frontendCodeLink">
+                            <a target="_blank" :href="project.frontendCode" class="frontendCodeLink" :id="`frontendCodeLink${project.id}`" @mouseenter="mouseEnterFrontendLink(project.id)" @mouseleave="mouseLeaveFrontendLink(project.id)">
                                 <button class="frontendCodeButton">Front-end Code</button>
                             </a>
                         </div>
@@ -104,6 +104,44 @@
             }
         },
 
+        methods: {
+            mouseEnterWebsiteLink(id) {
+                document.getElementById(`websiteLink${id}`).style.color = this.projects[id - 1].color;
+                document.getElementById(`websiteLink${id}`).style.border = `1px solid ${this.projects[id - 1].color}`;
+                document.getElementById(`websiteLink${id}`).style.background = "white";
+            },
+
+            mouseLeaveWebsiteLink(id) {
+                document.getElementById(`websiteLink${id}`).style.background = this.projects[id - 1].color;
+                document.getElementById(`websiteLink${id}`).style.border = `1px solid ${this.projects[id - 1].color}`;
+                document.getElementById(`websiteLink${id}`).style.color = "white";
+            },
+
+            mouseEnterFrontendLink(id) {
+                document.getElementById(`frontendCodeLink${id}`).style.background = this.projects[id - 1].color;
+                document.getElementById(`frontendCodeLink${id}`).style.border = `1px solid ${this.projects[id - 1].color}`;
+                document.getElementById(`frontendCodeLink${id}`).style.color = "white";
+            },
+
+            mouseLeaveFrontendLink(id) {
+                document.getElementById(`frontendCodeLink${id}`).style.color = this.projects[id - 1].color;
+                document.getElementById(`frontendCodeLink${id}`).style.border = `1px solid ${this.projects[id - 1].color}`;
+                document.getElementById(`frontendCodeLink${id}`).style.background = "white";
+            },
+
+            mouseEnterBackendLink(id) {
+                document.getElementById(`backendCodeLink${id}`).style.background = this.projects[id - 1].color;
+                document.getElementById(`backendCodeLink${id}`).style.border = `1px solid ${this.projects[id - 1].color}`;
+                document.getElementById(`backendCodeLink${id}`).style.color = "white";
+            },
+
+            mouseLeaveBackendLink(id) {
+                document.getElementById(`backendCodeLink${id}`).style.color = this.projects[id - 1].color;
+                document.getElementById(`backendCodeLink${id}`).style.border = `1px solid ${this.projects[id - 1].color}`;
+                document.getElementById(`backendCodeLink${id}`).style.background = "white";
+            },
+        },
+
         mounted() {
             let websiteLinks = document.getElementsByClassName('websiteLink');
             let frontendCodeLinks = document.getElementsByClassName('frontendCodeLink');
@@ -111,6 +149,7 @@
             
             for(let i = 0; i < websiteLinks.length; i++) {
                 websiteLinks[i].style.background = this.projects[i].color;
+                websiteLinks[i].style.border = `1px solid ${this.projects[i].color}`;
             }
             
             for(let i = 0; i < frontendCodeLinks.length; i++) {
@@ -207,6 +246,14 @@
         text-align: center;
     }
 
+    .frontendCodeLink:hover, .backendCodeLink:hover {
+        font-weight: 400;
+    }
+
+    .websiteLink:hover {
+        font-weight: 700;
+    }
+
     .frontendCodeLink, .backendCodeLink {
         width: 100%;
         text-align: center;
@@ -250,6 +297,62 @@
 
         .websiteButton, .frontendCodeButton, .backendCodeButton {
             font-size: 1.25rem;
+        }
+    }
+
+    @media only screen and (min-width: 1024px) {
+
+        #heading {
+            font-size: 2rem;
+            margin: 3vh 0vw 5vh 0vw;
+        }
+
+        .projectContainer {
+            display: grid;
+            place-items: center;
+            grid-template-columns: 1fr 2fr;
+        }
+
+        img {
+            width: 80%;
+        }
+
+        .projectTitle {
+            font-size: 1.3rem;
+        }
+
+        p {
+            font-size: 0.9rem;
+        }
+
+        .textContainer {
+            padding-top: 5%;
+        }
+
+        .buttonContainer {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            justify-self: start;
+            width: 80%;
+        }
+
+        .websiteButton, .frontendCodeButton, .backendCodeButton {
+            font-size: 0.8rem;
+        }
+
+        .websiteLink {
+            padding: 1%;
+            width: 60%;
+            justify-self: start;
+        }
+
+        .githubLinksFrontendAndBackend {
+            margin-left: -71%;
+        }
+
+        .githubLinksFrontendOnly {
+            width: 60%;
+            margin-left: -23.5vw;
         }
     }
 </style>
