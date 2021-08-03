@@ -246,12 +246,12 @@
         text-align: center;
     }
 
-    .frontendCodeLink:hover, .backendCodeLink:hover {
-        font-weight: 400;
-    }
-
     .websiteLink:hover {
         font-weight: 700;
+    }
+
+    .frontendCodeLink:hover, .backendCodeLink:hover {
+        font-weight: 400;
     }
 
     .frontendCodeLink, .backendCodeLink {
