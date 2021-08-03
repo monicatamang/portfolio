@@ -56,7 +56,7 @@
             font-family: var(--primaryFont);
             font-size: 0.9rem;
             text-transform: uppercase;
-            font-weight: 300;
+            font-weight: 400;
             border-bottom: 1px solid white;
         }
 

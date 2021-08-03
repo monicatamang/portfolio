@@ -6,7 +6,7 @@
             <div v-for="skill in skills" :key="skill.id" class="skillContainer">
                 <img src="../assets/skillsIcons/html.jpg" :alt="skill.alt" v-if="skill.language === 'HTML'">
                 <img src="../assets/skillsIcons/css.jpg" :alt="skill.alt" v-if="skill.language === 'CSS'">
-                <img src="../assets/skillsIcons/scss.jpg" :alt="skill.alt" v-if="skill.language === 'SCSS'">
+                <img src="../assets/skillsIcons/scss.jpg" :alt="skill.alt" v-if="skill.language === 'SASS'">
                 <img src="../assets/skillsIcons/javascript.jpg" :alt="skill.alt" v-if="skill.language === 'JavaScript'">
                 <img src="../assets/skillsIcons/vue.jpg" :alt="skill.alt" v-if="skill.language === 'Vue.js'">
                 <img src="../assets/skillsIcons/mariadb.jpg" :alt="skill.alt" v-if="skill.language === 'MariaDB'">
@@ -56,7 +56,7 @@
                         id: 3,
                         icon: "/img/scss.dcab4615.jpg",
                         alt: "The SASS logo that has the word 'SASS' written in a cursive, pink-coloured font.",
-                        language: "SCSS",
+                        language: "SASS",
                     },
                     {
                         id: 4,
@@ -190,6 +190,26 @@
 
         img {
             width: 45%;
+        }
+    }
+
+    @media only screen and (min-width: 1024px) {
+
+        h1 {
+            font-size: 2rem;
+            margin: 3vh 0vw 5vh 0vw;
+        }
+
+        p {
+            font-size: 0.9rem;
+        }
+
+        img {
+            width: 35%;
+        }
+
+        .mainContainer {
+            margin-bottom: 5vh;
         }
     }
 </style>

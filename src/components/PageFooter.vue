@@ -1,11 +1,11 @@
 <template>
     <article>
         <div id="linksContainer">
-            <a href="mailto:tamang.monica@gmail.com"><v-icon color="white">mdi-email</v-icon></a>
+            <a target="_blank" href="mailto:tamang.monica@gmail.com"><v-icon color="white">mdi-email</v-icon></a>
             <a href="tel:4034776231" id="mobilePhoneNumber"><v-icon color="white">mdi-phone</v-icon></a>
             <v-icon color="white" id="desktopPhoneNumber">mdi-phone</v-icon>
-            <a href="https://github.com/monicatamang/"><v-icon color="white">mdi-github</v-icon></a>
-            <a href="https://www.linkedin.com/in/monicatamang/"><v-icon color="white">mdi-linkedin</v-icon></a>
+            <a target="_blank" href="https://github.com/monicatamang/"><v-icon color="white">mdi-github</v-icon></a>
+            <a target="_blank" href="https://www.linkedin.com/in/monicatamang/"><v-icon color="white">mdi-linkedin</v-icon></a>
         </div>
         <p><v-icon color="white" id="copyrightIcon">mdi-copyright</v-icon> 2021 Monica Tamang. All Rights Reserved.</p>
     </article>
