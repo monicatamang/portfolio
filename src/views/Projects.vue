@@ -4,7 +4,7 @@
         <h1 id="heading">Projects</h1>
         <article v-for="project in projects" :key="project.id" class="mainContainer">
             <div class="projectContainer">
-                <img src="../assets/mockups/jobCheckIphoneMockup.png" :alt="project.alt" v-if="project.title === 'Job Check'">
+                <img src="../assets/mockups/jobCheckIphoneMockup.jpg" :alt="project.alt" v-if="project.title === 'Job Check'">
                 <img src="../assets/mockups/postItIphoneMockup.jpg" :alt="project.alt" v-if="project.title === 'Post-It'">
                 <img src="../assets/mockups/rockPaperScissorsIphoneMockup.jpg" :alt="project.alt" v-if="project.title === 'Rock Paper Scissors'">
                 <img src="../assets/mockups/okotoksPizzaIphoneMockup.jpg" :alt="project.alt" v-if="project.title === 'Okotoks Pizza'">
