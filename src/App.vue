@@ -22,6 +22,8 @@
 <style>
   :root {
     --primaryFont: 'Lato', sans-serif;
+    --primaryColor: #292929;
+    --secondaryColor: #7F7F7F;
     --backgroundColour: #FFFEFE;
   }
 
