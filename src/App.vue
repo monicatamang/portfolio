@@ -29,5 +29,7 @@
 
   .v-main {
     background: var(--backgroundColour);
+    color: var(--primaryColor);
+    font-family: var(--primaryFont);
   }
 </style>

@@ -127,13 +127,21 @@
                 ]
             }
         },
+
+        mounted() {
+            document.querySelector("section").style.opacity = 1;
+            document.querySelector("section").style.transition = "opacity 1s ease-in-out 10ms";
+        }
     }
 </script>
 
 <style scoped>
+    section {
+        opacity: 0;
+    }
+
     h1 {
         margin: 11vh 0vw 3vh 0vw;
-        font-family: var(--primaryFont);
         text-transform: uppercase;
         text-align: center;
         font-weight: 400;
@@ -160,7 +168,6 @@
     }
 
     p {
-        font-family: var(--primaryFont);
         letter-spacing: 1px;
         font-size: 1.1rem;
     }

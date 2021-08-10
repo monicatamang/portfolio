@@ -1,8 +1,5 @@
 <template>
     <article>
-        <h1>Want to learn more? Let's Connect!</h1>
-        <h2>Feel free to contact me about anything web development related or just to have a quick chat!</h2>
-        <router-link to="/Contact" id="contactButton"><button>Contact</button></router-link>
         <div id="linksContainer">
             <a target="_blank" href="mailto:tamang.monica@gmail.com"><v-icon :color="iconColor">mdi-email</v-icon></a>
             <a target="_blank" href="https://github.com/monicatamang/"><v-icon :color="iconColor">mdi-github</v-icon></a>
@@ -18,7 +15,7 @@
 
         data() {
             return {
-                iconColor: "white",
+                iconColor: "#292929",
                 copyrightIconColor: "black"
             }
         }
@@ -29,16 +26,15 @@
     article {
         display: grid;
         place-items: center;
-        border-top: 0.5px solid var(--secondaryColor);
+        row-gap: 30px;
         width: 100%;
         height: 100%;
         padding: 10% 5%;
-        row-gap: 30px;
     }
 
     h1, h2 {
-        font-family: var(--primaryFont);
         text-align: center;
+        color: white;
     }
 
     h2 {
@@ -55,17 +51,17 @@
 
     #linksContainer a {
         text-decoration: none;
-        background: var(--primaryColor);
-        border-radius: 30px;
+        border: 0.5px solid var(--primaryColor);
+        border-radius: 100%;
         padding: 10%;
     }
 
     p {
-        font-family: var(--primaryFont);
         font-size: 0.8rem;
         letter-spacing: 1px;
         text-align: center;
         font-weight: 400;
+        color: var(--primaryColor);
     }
 
     .v-application p {
@@ -78,16 +74,6 @@
 
     #copyrightIcon {
         font-size: 1rem;
-    }
-
-    #contactButton {
-        border: 0.5px solid var(--primaryColor);
-        width: 40%;
-        padding: 3% 0%;
-        text-align: center;
-        color: var(--primaryColor);
-        font-family: var(--primaryFont);
-        margin: 1vh 0vw 2vh 0vw;
     }
 
     #desktopPhoneNumber {
@@ -140,10 +126,9 @@
             font-size: 1.5rem;
         }
 
-        /* .v-icon:hover {
-            background: grey;
-            border-radius: 2px;
-        } */
+        #linksContainer a {
+            padding: 8%;
+        }
 
         #mobilePhoneNumber {
             display: none;

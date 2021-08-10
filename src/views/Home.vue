@@ -9,7 +9,7 @@
             </article>
             <div>
                 <v-btn large dark depressed @click="goToContactPage">Contact</v-btn>
-                <v-btn large outlined depressed @click="goToProjectsPage">Projects</v-btn>
+                <v-btn large outlined depressed @click="goToProjectsPage">View Work</v-btn>
             </div>
         </main>
     </section>
@@ -32,12 +32,21 @@
 
             goToProjectsPage() {
                 this.$router.push('/Projects');
-            }
+            } 
+        },
+
+        mounted() {
+            document.querySelector("section").style.opacity = 1;
+            document.querySelector("section").style.transition = "opacity 1s ease-in-out 10ms";
         }
     }
 </script>
 
 <style scoped>
+    section {
+        opacity: 0;
+    }
+
     main {
         display: grid;
         place-items: center;
@@ -59,13 +68,11 @@
     }
 
     .v-btn {
-        font-family: var(--primaryFont);
         letter-spacing: 2px;
         width: 35vw;
     }
 
     h1 {
-        font-family: var(--primaryFont);
         font-weight: 400;
         text-transform: uppercase;
         letter-spacing: 4px;
@@ -73,7 +80,6 @@
     }
 
     h2 {
-        font-family: var(--primaryFont);
         font-weight: 300;
         letter-spacing: 1px;
         font-size: 1.1rem;
@@ -85,6 +91,7 @@
     }
 
     @media only screen and (min-width: 768px) {
+        
 
         main {
             row-gap: 10vh;

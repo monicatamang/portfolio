@@ -3,20 +3,18 @@
         <mobile-nav-bar :isHomePage="false"></mobile-nav-bar>
         <h1>Contact</h1>
         <article>
-            <div id="contactInfoContainer">
-                <a href="mailto:tamang.monica@gmail.com"><v-icon color="black">mdi-email</v-icon> tamang.monica@gmail.com</a>
-                <a href="tel:4034776231" id="mobilePhoneNumber"><v-icon color="black">mdi-phone</v-icon> (403) 477-6231</a>
-                <p id="desktopPhoneNumber"><v-icon color="black">mdi-phone</v-icon> (403) 477-6231</p>
-                <a href="https://github.com/monicatamang/"><v-icon color="black">mdi-github</v-icon> github.com/monicatamang</a>
-                <a target="_blank" href="https://www.linkedin.com/in/monicatamang/"><v-icon color="black">mdi-linkedin</v-icon> www.linkedin.com/in/monicatamang</a>
-                <a href="https://drive.google.com/file/d/1lHhJbNFCjgE1QXYolNGi5cu0FvtEwzI8/view?usp=sharing" id="resumeButton"><button>View Resume</button></a>
-            </div>
             <div id="quoteRequestContainer">
-                <h3>Feel free to reach out to me for any questions or if you just want to have a quick chat</h3>
-                <v-icon color="black" id="chatIcon">mdi-chat</v-icon>
-                <a target="_blank" href="mailto:tamang.monica@gmail.com">
-                    <button><v-icon>mdi-email</v-icon>Email Me</button>
-                </a>
+                <h2>Want to learn more? Let's connect!</h2>
+                <v-icon :color="primaryColor" id="chatIcon">mdi-chat</v-icon>
+                <p>I'd love to chat about anything web development related or just getting to know each other!</p>
+            </div>
+            <div id="contactInfoContainer">
+                <a href="mailto:tamang.monica@gmail.com"><v-icon :color="primaryColor">mdi-email</v-icon> tamang.monica@gmail.com</a>
+                <a href="tel:4034776231" id="mobilePhoneNumber"><v-icon :color="primaryColor">mdi-phone</v-icon> (403) 477-6231</a>
+                <p id="desktopPhoneNumber"><v-icon :color="primaryColor">mdi-phone</v-icon> (403) 477-6231</p>
+                <a href="https://github.com/monicatamang/"><v-icon color="black">mdi-github</v-icon> github.com/monicatamang</a>
+                <a target="_blank" href="https://www.linkedin.com/in/monicatamang/"><v-icon :color="primaryColor">mdi-linkedin</v-icon> www.linkedin.com/in/monicatamang</a>
+                <a href="https://drive.google.com/file/d/1lHhJbNFCjgE1QXYolNGi5cu0FvtEwzI8/view?usp=sharing" id="resumeButton"><button>View Resume</button></a>
             </div>
         </article>
     </section>
@@ -30,11 +28,26 @@
 
         components: {
             MobileNavBar
+        },
+
+        data() {
+            return {
+                primaryColor: "#292929"
+            }
+        },
+
+        mounted() {
+            document.querySelector("section").style.opacity = 1;
+            document.querySelector("section").style.transition = "opacity 1s ease-in-out 10ms";
         }
     }
 </script>
 
 <style scoped>
+    section {
+        opacity: 0;
+    }
+
     article {
         display: grid;
         justify-self: start;
@@ -51,7 +64,6 @@
 
     h1 {
         margin: 11vh 0vw 3vh 0vw;
-        font-family: var(--primaryFont);
         text-transform: uppercase;
         text-align: center;
         font-weight: 400;
@@ -59,14 +71,10 @@
         font-size: 1.8rem;
     }
 
-    h3 {
-        font-family: var(--primaryFont);
-        font-weight: 400;
-    }
-
-    h2, a {
+    h2, h2 + p {
+        text-align: center;
+        color: var(--primaryColor);
         font-size: 1rem;
-        font-family: var(--primaryFont);
     }
 
     a {
@@ -74,23 +82,21 @@
     }
 
     .v-application a {
-        color: black;
+        color: var(--primaryColor);
     }
 
     #quoteRequestContainer {
         display: grid;
         place-items: center;
-        color: white;
-        background: black;
+        color: var(--primaryColor);
+        row-gap: 10px;
+        margin-bottom: 2vh;
         text-align: center;
-        min-height: 41vh;
-        padding: 5%;
-        margin-top: 5vh;
     }
 
     #quoteRequestContainer > a {
         background: white;
-        color: black;
+        color: var(--primaryColor);
         padding: 3% 5%;
         border-radius: 2px;
         font-size: 1.3rem;
@@ -106,11 +112,11 @@
     .v-icon {
         margin-right: 5px;
         font-size: 1.5rem;
-        color: black;
+        color: var(--primaryColor);
     }
 
     #resumeButton {
-        border: 1px solid black;
+        border: 1px solid var(--primaryColor);
         justify-self: start;
         padding: 3%;
     }
@@ -168,7 +174,6 @@
 
         #desktopPhoneNumber {
             display: inline;
-            font-family: var(--primaryFont);
             margin-bottom: 0px;
         }
 
@@ -185,25 +190,21 @@
         #contactInfoContainer {
             place-items: center;
             margin-top: 5vh;
-            border-right: 1px solid black;
+            border-left: 1px solid var(--primaryColor);
         }
 
         #quoteRequestContainer {
             background: none;
             margin-top: 0vh;
             row-gap: 50px;
+            padding: 3% 10%; 
         }
 
         #quoteRequestContainer button {
-            border: 1px solid black;
+            border: 1px solid var(--primaryColor);
             width: 100%;
             padding: 5% 2%;
             font-size: 1.2rem;
-        }
-
-        #quoteRequestContainer button:hover {
-            background: black;
-            color: white;
         }
 
         #quoteRequestContainer > a {
@@ -215,19 +216,9 @@
             margin-left: 10px;
         }
 
-        #quoteRequestContainer button:hover .v-icon {
-            color: white;
-        }
-
         #chatIcon {
             display: grid;
             font-size: 5.5rem;
-        }
-
-        h3 {
-            color: black;
-            font-size: 1.2rem;
-            padding: 0% 10%;
         }
 
         h1 {
@@ -235,27 +226,22 @@
             margin: 3vh 0vw 5vh 0vw;
         }
 
+        h2 {
+            font-size: 1.3rem;
+        }
+
         .v-icon {
             font-size: 1.4rem;
         }
 
-        a, p {
+        a {
             font-size: 1.1rem;
-        }
-
-        a:hover {
-            font-weight: 700;
         }
 
         #resumeButton {
             padding: 1% 2%;
             font-size: 1rem;
             justify-self: center;
-        }
-
-        #resumeButton:hover {
-            background: black;
-            color: white;
         }
     }
 </style>

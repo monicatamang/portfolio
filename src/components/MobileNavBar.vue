@@ -5,12 +5,12 @@
             <img src="../assets/logo.png" alt="Monica Tamang's official logo with the initials 'MT' in the middle with the word 'DESIGNS' spaced out at beneatht initials enclosed in a square.">
         </router-link>
         <v-spacer></v-spacer>
-        <v-icon large color="black" v-if="toggleNavMenu === false" @click="toggleNavMenu = !toggleNavMenu">mdi-menu</v-icon>
-        <v-icon large color="black" v-if="toggleNavMenu === true" @click="toggleNavMenu = !toggleNavMenu">mdi-close</v-icon>
+        <v-icon large :color="primaryColor" v-if="toggleNavMenu === false" @click="toggleNavMenu = !toggleNavMenu">mdi-menu</v-icon>
+        <v-icon large :color="primaryColor" v-if="toggleNavMenu === true" @click="toggleNavMenu = !toggleNavMenu">mdi-close</v-icon>
         <nav id="navMenu" :class="{ showNavMenu: toggleNavMenu }">
             <router-link to="/">Home</router-link>
             <router-link to="/About">About</router-link>
-            <router-link to="/Projects">Projects</router-link>
+            <router-link to="/Projects">Work</router-link>
             <router-link to="/Skills">Skills</router-link>
             <router-link to="/Contact">Contact</router-link>
         </nav>
@@ -26,7 +26,8 @@
 
         data() {
             return {
-                toggleNavMenu: false
+                toggleNavMenu: false,
+                primaryColor: "#292929"
             }
         }
     }
@@ -77,7 +78,6 @@
 
     a {
         text-decoration: none;
-        font-family: var(--primaryFont);
         letter-spacing: 1px;
         padding: 20px 0px;
         width: 100%;

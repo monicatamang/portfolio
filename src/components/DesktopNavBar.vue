@@ -1,13 +1,13 @@
 <template>
     <div id="navBar">
-        <router-link to="/" id="logo">
-            <img src="../assets/logo.png" alt="Monica Tamang's official logo with the initials 'MT' in the middle with the word 'DESIGNS' spaced out at beneatht initials enclosed in a square.">
+        <router-link to="/" id="logoLink">
+            <img src="../assets/logo.png" id="logo" alt="Monica Tamang's official logo with the initials 'MT' in the middle with the word 'DESIGNS' spaced out at beneatht initials enclosed in a square.">
         </router-link>
         <div></div>
         <nav>
             <router-link to="/">Home</router-link>
             <router-link to="/About">About</router-link>
-            <router-link to="/Projects">Projects</router-link>
+            <router-link to="/Projects">Work</router-link>
             <router-link to="/Skills">Skills</router-link>
             <router-link to="/Contact">Contact</router-link>
         </nav>
@@ -29,7 +29,7 @@
 
         #navBar {
             display: grid;
-            grid-template-columns: auto 1fr 1fr;
+            grid-template-columns: 1fr 1fr 1fr;
         }
 
         nav {
@@ -40,9 +40,15 @@
         }
 
         #logo {
+            width: 6vw;
+            margin-left: 0.8vw;
+        }
+
+        #logoLink {
             padding: 0px;
             margin-top: 10px;
-            border-bottom: 1px solid white;
+            border: 1px solid white;
+            width: 10%;
         }
 
         img {
@@ -51,21 +57,21 @@
         }
 
         nav a {
+            font-family: var(--primaryFont);
             text-decoration: none;
             color: black;
-            font-family: var(--primaryFont);
             font-size: 0.9rem;
             text-transform: uppercase;
             font-weight: 400;
-            border-bottom: 1px solid white;
+            border: 0.5px solid white;
         }
 
         .v-application a {
-            padding: 2%;
+            padding: 5% 10%;
         }
 
         nav a:hover, .router-link-exact-active {
-            border-bottom: 1px solid lightgrey;
+            border: 0.5px solid var(--primaryColor);
         }
     }
 </style>

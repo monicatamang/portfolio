@@ -1,7 +1,7 @@
 <template>
     <section>
         <mobile-nav-bar :isHomePage="false"></mobile-nav-bar>
-        <h1 id="heading">Projects</h1>
+        <h1 id="heading">Work</h1>
         <article v-for="project in projects" :key="project.id" class="mainContainer">
             <div class="projectContainer">
                 <img src="../assets/mockups/jobCheckIphoneMockup.jpg" :alt="project.alt" v-if="project.title === 'Job Check'">
@@ -161,11 +161,18 @@
                 backendCodeLinks[i].style.border = `1px solid ${this.projects[i].color}`;
                 backendCodeLinks[i].style.color = this.projects[i].color;
             }
+
+            document.querySelector("section").style.opacity = 1;
+            document.querySelector("section").style.transition = "opacity 1s ease-in-out 10ms";
         }
     }
 </script>
 
 <style scoped>
+    section {
+        opacity: 0;
+    }
+
     .mainContainer, div {
         display: grid;
         place-items: center;
@@ -173,7 +180,6 @@
 
     #heading {
         margin: 11vh 0vw 3vh 0vw;
-        font-family: var(--primaryFont);
         text-transform: uppercase;
         text-align: center;
         font-weight: 400;
@@ -193,7 +199,6 @@
     }
 
     .projectTitle, p {
-        font-family: var(--primaryFont);
         justify-self: left;
     }
 

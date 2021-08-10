@@ -21,6 +21,11 @@
         components: {
             MobileNavBar,
             PageFooter
+        },
+
+        mounted() {
+            document.querySelector("section").style.opacity = 1;
+            document.querySelector("section").style.transition = "opacity 1s ease-in-out 10ms";
         }
     }
 </script>
@@ -30,6 +35,7 @@
         text-align: left;
         display: grid;
         place-items: center;
+        opacity: 0;
     }
 
     #aboutSection {
@@ -46,11 +52,9 @@
         font-size: 1.8rem;
         margin-bottom: 3vh;
         text-align: center;
-        font-family: var(--primaryFont);
     }
 
     p {
-        font-family: var(--primaryFont);
         font-weight: 300;
     }
 
