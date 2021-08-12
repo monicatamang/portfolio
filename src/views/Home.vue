@@ -125,6 +125,11 @@
 
     @media only screen and (min-width: 1024px) {
 
+        main {
+            row-gap: 0px;
+            margin-top: 5vh;
+        }
+
         article {
             row-gap: 40px;
         }

@@ -5,8 +5,13 @@
         <article>
             <div id="quoteRequestContainer">
                 <h2>Want to learn more? Let's connect!</h2>
-                <v-icon :color="primaryColor" id="chatIcon">mdi-chat</v-icon>
                 <p>I'd love to chat about anything web development related or just getting to know each other!</p>
+                <a href="mailto:tamang.monica@gmail.com">
+                    <button id="contactButton">
+                        <v-icon :color="primaryColor">mdi-email</v-icon>
+                        <span>Contact</span>
+                    </button>
+                </a>
             </div>
             <div id="contactInfoContainer">
                 <a href="mailto:tamang.monica@gmail.com"><v-icon :color="primaryColor">mdi-email</v-icon> tamang.monica@gmail.com</a>
@@ -94,21 +99,6 @@
         text-align: center;
     }
 
-    #quoteRequestContainer > a {
-        background: white;
-        color: var(--primaryColor);
-        padding: 3% 5%;
-        border-radius: 2px;
-        font-size: 1.3rem;
-    }
-
-    #quoteRequestContainer button {
-        display: grid;
-        place-items: center;
-        grid-template-columns: 1fr 3fr;
-        font-size: 1.3rem;
-    }
-
     .v-icon {
         margin-right: 5px;
         font-size: 1.5rem;
@@ -121,11 +111,7 @@
         padding: 3%;
     }
 
-    #desktopPhoneNumber {
-        display: none;
-    }
-
-    #chatIcon {
+    #desktopPhoneNumber, #contactButton {
         display: none;
     }
 
@@ -148,7 +134,7 @@
             padding: 3% 5%;
         }
 
-        #quoteRequestContainer button {
+        #contactButton {
             font-size: 1.6rem;
         }
 
@@ -200,25 +186,24 @@
             padding: 3% 10%; 
         }
 
-        #quoteRequestContainer button {
+        #quoteRequestContainer > a {
+            width: 25%;
+        }
+
+        #contactButton {
+            display: grid;
+            place-items: center;
+            grid-template-columns: 1fr 3fr;
+            font-size: 1.1rem;
             border: 1px solid var(--primaryColor);
             width: 100%;
-            padding: 5% 2%;
-            font-size: 1.2rem;
+            background: white;
+            color: var(--primaryColor);
+            padding: 5% 3%;
         }
 
-        #quoteRequestContainer > a {
-            padding: 0%;
-            width: 30%;
-        }
-
-        #quoteRequestContainer > a .v-icon {
-            margin-left: 10px;
-        }
-
-        #chatIcon {
-            display: grid;
-            font-size: 5.5rem;
+        #contactButton .v-icon {
+            margin: 0px 3px 0px 7px;
         }
 
         h1 {
