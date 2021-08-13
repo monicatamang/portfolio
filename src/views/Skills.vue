@@ -9,6 +9,7 @@
                 <img src="../assets/skillsIcons/scss.jpg" :alt="skill.alt" v-if="skill.language === 'SASS'">
                 <img src="../assets/skillsIcons/javascript.jpg" :alt="skill.alt" v-if="skill.language === 'JavaScript'">
                 <img src="../assets/skillsIcons/vue.jpg" :alt="skill.alt" v-if="skill.language === 'Vue.js'">
+                <img src="../assets/skillsIcons/vuetify.jpg" :alt="skill.alt" v-if="skill.language === 'Vuetify'">
                 <img src="../assets/skillsIcons/mariadb.jpg" :alt="skill.alt" v-if="skill.language === 'MariaDB'">
                 <img src="../assets/skillsIcons/sql.jpg" :alt="skill.alt" v-if="skill.language === 'SQL'">
                 <img src="../assets/skillsIcons/python.jpg" :alt="skill.alt" v-if="skill.language === 'Python'">
@@ -16,6 +17,7 @@
                 <img src="../assets/skillsIcons/api.jpg" :alt="skill.alt" v-if="skill.language === 'Rest APIs'">
                 <img src="../assets/skillsIcons/git.jpg" :alt="skill.alt" v-if="skill.language === 'Git'">
                 <img src="../assets/skillsIcons/googleCloud.jpg" :alt="skill.alt" v-if="skill.language === 'Google Cloud'">
+                <img src="../assets/skillsIcons/seo.jpg" :alt="skill.alt" v-if="skill.language === 'SEO'">
                 <img src="../assets/skillsIcons/ux.jpg" :alt="skill.alt" v-if="skill.language === 'UX Design'">
                 <img src="../assets/skillsIcons/figma.jpg" :alt="skill.alt" v-if="skill.language === 'Figma'">
                 <p>{{ skill.language }}</p>
@@ -72,54 +74,66 @@
                     },
                     {
                         id: 6,
+                        icon: "",
+                        alt: "The Vuetify logo which is the letter 'V' in a light blue colour with an isosceles triangle in a dark blue colour pointed towards the inside of the letter 'V'.",
+                        language: "Vuetify",
+                    },
+                    {
+                        id: 7,
                         icon: "/img/mariadb.eb4f8395.jpg",
                         alt: "The MariaDB logo which is a dark tan coloured seal looking in the right direction.",
                         language: "MariaDB",
                     },
                     {
-                        id: 7,
+                        id: 8,
                         icon: "/img/sql.bf89e33e.jpg",
                         alt: "A vector image of a grey coloured database server.",
                         language: "SQL",
                     },
                     {
-                        id: 8,
+                        id: 9,
                         icon: "/img/python.c28d29ce.jpg",
                         alt: "The python logo with two-colour snakes. The snake on the left side is blue and the snake of the right side is yellow.",
                         language: "Python",
                     },
                     {
-                        id: 9,
+                        id: 10,
                         icon: "/img/flask.d070e7fd.jpg",
                         alt: "The Flask logo which is an sketch of a volumetric flask.",
                         language: "Flask",
                     },
                     {
-                        id: 10,
+                        id: 11,
                         icon: "/img/api.2602bfad.jpg",
                         alt: "A vector image of a light grey gear with the symbols of a blue left and right arrow with a red backslash in the middle of the arrows.",
                         language: "Rest APIs",
                     },
                     {
-                        id: 11,
+                        id: 12,
                         icon: "/img/git.16c78d60.jpg",
                         alt: "The Git logo which is an orange rhombus with rounded corners and an abstract white image on it.",
                         language: "Git",
                     },
                     {
-                        id: 12,
+                        id: 13,
                         icon: "/img/googleCloud.169542bc.jpg",
                         alt: "The Google Cloud logo which is a small cloud shaped with a border that has the colours red, blue, green and yellow.",
                         language: "Google Cloud",
                     },
                     {
-                        id: 13,
+                        id: 14,
+                        icon: "/img/seo.54fb6b69.jpg",
+                        alt: "A vector image of a website with a navy blue magnifying glass on the bottom-right corner and a dark pink circle as the background.",
+                        language: "SEO",
+                    },
+                    {
+                        id: 15,
                         icon: "/img/ux.072a8d7c.jpg",
-                        alt: "A vector image of a soft pink bordered website with a with a persona displayed on a dark blue bordered phone.",
+                        alt: "A vector image of a soft pink bordered website with a persona displayed on a dark blue borderd phone.",
                         language: "UX Design",
                     },
                     {
-                        id: 14,
+                        id: 16,
                         icon: "/img/figma.14979871.jpg",
                         alt: "The Figma logo which has the letter 'F' that is made of up of smaller circles with that colours red, purple, blue and green on a black, rounded square.",
                         language: "Figma",
